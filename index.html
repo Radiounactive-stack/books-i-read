@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My 2024 Reading List</title>
+    <title>My 2025 Reading List</title>
     <style>
         * {
             margin: 0;
@@ -35,6 +35,88 @@
         header p {
             font-size: 1.1rem;
             color: #a0a0a0;
+        }
+
+        .quote-game {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .quote-btn {
+            background: linear-gradient(145deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .quote-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+        }
+
+        .quote-display {
+            display: none;
+            margin-top: 25px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border-left: 4px solid #6366f1;
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #fff;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .guess-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .guess-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .guess-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .guess-btn.correct {
+            background: #22c55e;
+            border-color: #22c55e;
+            color: white;
+        }
+
+        .guess-btn.wrong {
+            background: #ef4444;
+            border-color: #ef4444;
+            color: white;
+        }
+
+        .result-message {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
         .books-container {
@@ -115,10 +197,10 @@
             color: #888;
         }
 
-        .amazon-badge {
+        .goodreads-badge {
             font-size: 0.7rem;
-            background: #ff9900;
-            color: #000;
+            background: #e9d8a6;
+            color: #3d2914;
             padding: 2px 6px;
             border-radius: 3px;
             font-weight: 600;
@@ -149,14 +231,28 @@
             .book-rating {
                 justify-content: center;
             }
+
+            .quote-text {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>My Reading List</h1>
+        <h1>My 2025 Reading List</h1>
         <p>9 books from the past year</p>
     </header>
+
+    <section class="quote-game">
+        <button class="quote-btn" onclick="showRandomQuote()">Get a Random Quote</button>
+        <div class="quote-display" id="quoteDisplay">
+            <p class="quote-text" id="quoteText"></p>
+            <p style="color: #a0a0a0; margin-bottom: 15px;">Which book is this from?</p>
+            <div class="guess-section" id="guessSection"></div>
+            <p class="result-message" id="resultMessage"></p>
+        </div>
+    </section>
 
     <main class="books-container">
         <article class="book-card">
@@ -167,8 +263,8 @@
                 <p class="book-description">A powerful story of love and identity following Ifemelu, a young Nigerian woman who immigrates to America, and her experiences with race, belonging, and the pull of home.</p>
                 <div class="book-rating">
                     <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-                    <span class="rating-text">4.3/5</span>
-                    <span class="amazon-badge">Amazon</span>
+                    <span class="rating-text">4.27/5</span>
+                    <span class="goodreads-badge">Goodreads</span>
                 </div>
             </div>
         </article>
@@ -181,8 +277,8 @@
                 <p class="book-description">An in-depth examination of China's ambitious industrial strategy and its race to dominate the technologies of the future, from semiconductors to electric vehicles.</p>
                 <div class="book-rating">
                     <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-                    <span class="rating-text">4.5/5</span>
-                    <span class="amazon-badge">Amazon</span>
+                    <span class="rating-text">4.19/5</span>
+                    <span class="goodreads-badge">Goodreads</span>
                 </div>
             </div>
         </article>
@@ -194,9 +290,9 @@
                 <p class="book-author">Joseph Cox</p>
                 <p class="book-description">The thrilling true story of Anom, an encrypted phone company secretly run by the FBI, and how it ensnared thousands of criminals worldwide in one of history's largest sting operations.</p>
                 <div class="book-rating">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="rating-text">4.6/5</span>
-                    <span class="amazon-badge">Amazon</span>
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-text">4.31/5</span>
+                    <span class="goodreads-badge">Goodreads</span>
                 </div>
             </div>
         </article>
@@ -209,8 +305,8 @@
                 <p class="book-description">The timeless epic fantasy following Frodo Baggins and the Fellowship on their perilous quest to destroy the One Ring and save Middle-earth from the Dark Lord Sauron.</p>
                 <div class="book-rating">
                     <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="rating-text">4.8/5</span>
-                    <span class="amazon-badge">Amazon</span>
+                    <span class="rating-text">4.53/5</span>
+                    <span class="goodreads-badge">Goodreads</span>
                 </div>
             </div>
         </article>
@@ -222,9 +318,9 @@
                 <p class="book-author">Jennette McCurdy</p>
                 <p class="book-description">A heartbreaking yet darkly comedic memoir from the former child star about her struggles with an abusive mother, eating disorders, and finding her own identity beyond Hollywood.</p>
                 <div class="book-rating">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="rating-text">4.8/5</span>
-                    <span class="amazon-badge">Amazon</span>
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-text">4.40/5</span>
+                    <span class="goodreads-badge">Goodreads</span>
                 </div>
             </div>
         </article>
@@ -237,8 +333,8 @@
                 <p class="book-description">A revealing insider account of Facebook's global expansion, exposing how the company's idealism gave way to a relentless pursuit of growth at any cost.</p>
                 <div class="book-rating">
                     <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-                    <span class="rating-text">4.5/5</span>
-                    <span class="amazon-badge">Amazon</span>
+                    <span class="rating-text">4.24/5</span>
+                    <span class="goodreads-badge">Goodreads</span>
                 </div>
             </div>
         </article>
@@ -247,12 +343,12 @@
             <img src="https://covers.openlibrary.org/b/isbn/059365613X-L.jpg" alt="Character Limit cover" class="book-cover">
             <div class="book-info">
                 <h2 class="book-title">Character Limit</h2>
-                <p class="book-author">Ryan Mac</p>
+                <p class="book-author">Kate Conger & Ryan Mac</p>
                 <p class="book-description">The definitive account of Elon Musk's chaotic acquisition and transformation of Twitter, chronicling the mass layoffs, policy reversals, and cultural upheaval that followed.</p>
                 <div class="book-rating">
                     <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-                    <span class="rating-text">4.4/5</span>
-                    <span class="amazon-badge">Amazon</span>
+                    <span class="rating-text">3.95/5</span>
+                    <span class="goodreads-badge">Goodreads</span>
                 </div>
             </div>
         </article>
@@ -265,8 +361,8 @@
                 <p class="book-description">A groundbreaking Chinese science fiction novel about humanity's first contact with an alien civilization, blending Cultural Revolution history with mind-bending astrophysics.</p>
                 <div class="book-rating">
                     <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-                    <span class="rating-text">4.3/5</span>
-                    <span class="amazon-badge">Amazon</span>
+                    <span class="rating-text">4.05/5</span>
+                    <span class="goodreads-badge">Goodreads</span>
                 </div>
             </div>
         </article>
@@ -278,9 +374,9 @@
                 <p class="book-author">Kate Beaton</p>
                 <p class="book-description">A powerful graphic memoir about the author's experience working in the Alberta oil sands, exploring labor, sexism, environmental destruction, and the cost of Canada's resource economy.</p>
                 <div class="book-rating">
-                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="rating-text">4.7/5</span>
-                    <span class="amazon-badge">Amazon</span>
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-text">4.38/5</span>
+                    <span class="goodreads-badge">Goodreads</span>
                 </div>
             </div>
         </article>
@@ -289,5 +385,126 @@
     <footer>
         <p>Reading is a journey, not a destination.</p>
     </footer>
+
+    <script>
+        const quotes = [
+            {
+                text: "The only reason you say that race was not an issue is because you wish it was not. We all wish it was not. But it's a lie.",
+                book: "Americanah"
+            },
+            {
+                text: "If you don't understand, ask questions. If you're uncomfortable about asking questions, say you are uncomfortable about asking questions and then ask anyway.",
+                book: "Americanah"
+            },
+            {
+                text: "All that is gold does not glitter, not all those who wander are lost.",
+                book: "The Lord of the Rings"
+            },
+            {
+                text: "Even the smallest person can change the course of the future.",
+                book: "The Lord of the Rings"
+            },
+            {
+                text: "I will not say: do not weep; for not all tears are an evil.",
+                book: "The Lord of the Rings"
+            },
+            {
+                text: "It is not our part to master all the tides of the world, but to do what is in us for the succour of those years wherein we are set.",
+                book: "The Lord of the Rings"
+            },
+            {
+                text: "The universe is a dark forest. Every civilization is an armed hunter stalking through the trees.",
+                book: "The Three-Body Problem"
+            },
+            {
+                text: "In this moment, the Chinese ones and the non-Chinese ones all felt something in common, something deep in their hearts.",
+                book: "The Three-Body Problem"
+            },
+            {
+                text: "I survived because I told myself to just get through today. Don't worry about tomorrow or next week. Just survive the day.",
+                book: "I'm Glad My Mom Died"
+            },
+            {
+                text: "She wanted me to be her masterpiece. She wanted to mold me, to sculpt me, to make me into a creation she could display and admire.",
+                book: "I'm Glad My Mom Died"
+            },
+            {
+                text: "You can work hard and be a good person and still have bad things happen to you.",
+                book: "Ducks: Two Years in the Oil Sands"
+            },
+            {
+                text: "When you're far from home, money becomes a stand-in for everything you're missing.",
+                book: "Ducks: Two Years in the Oil Sands"
+            }
+        ];
+
+        const bookTitles = [
+            "Americanah",
+            "Breakneck",
+            "Dark Wire",
+            "The Lord of the Rings",
+            "I'm Glad My Mom Died",
+            "Careless People",
+            "Character Limit",
+            "The Three-Body Problem",
+            "Ducks: Two Years in the Oil Sands"
+        ];
+
+        let currentQuote = null;
+
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function showRandomQuote() {
+            currentQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+            document.getElementById('quoteText').textContent = `"${currentQuote.text}"`;
+            document.getElementById('quoteDisplay').style.display = 'block';
+            document.getElementById('resultMessage').textContent = '';
+
+            // Create guess buttons with shuffled options
+            const guessSection = document.getElementById('guessSection');
+            guessSection.innerHTML = '';
+
+            // Get 4 random options including the correct answer
+            let options = [currentQuote.book];
+            const otherBooks = bookTitles.filter(b => b !== currentQuote.book);
+            const shuffledOthers = shuffleArray(otherBooks);
+            options = options.concat(shuffledOthers.slice(0, 3));
+            options = shuffleArray(options);
+
+            options.forEach(book => {
+                const btn = document.createElement('button');
+                btn.className = 'guess-btn';
+                btn.textContent = book;
+                btn.onclick = () => checkGuess(btn, book);
+                guessSection.appendChild(btn);
+            });
+        }
+
+        function checkGuess(btn, guess) {
+            const buttons = document.querySelectorAll('.guess-btn');
+            buttons.forEach(b => b.disabled = true);
+
+            if (guess === currentQuote.book) {
+                btn.classList.add('correct');
+                document.getElementById('resultMessage').innerHTML = '<span style="color: #22c55e;">Correct! Well done!</span>';
+            } else {
+                btn.classList.add('wrong');
+                buttons.forEach(b => {
+                    if (b.textContent === currentQuote.book) {
+                        b.classList.add('correct');
+                    }
+                });
+                document.getElementById('resultMessage').innerHTML = `<span style="color: #ef4444;">Not quite! It was from <em>${currentQuote.book}</em></span>`;
+            }
+        }
+    </script>
 </body>
 </html>
