@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My 2024 Reading List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+        }
+
+        .books-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 30px;
+        }
+
+        .book-card {
+            background: linear-gradient(145deg, #1e2a4a 0%, #152238 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .book-cover {
+            width: 140px;
+            min-width: 140px;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .book-info {
+            padding: 20px 20px 20px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .book-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .book-author {
+            font-size: 0.95rem;
+            color: #7eb8da;
+            margin-bottom: 12px;
+        }
+
+        .book-description {
+            font-size: 0.88rem;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .book-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .rating-text {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .amazon-badge {
+            font-size: 0.7rem;
+            background: #ff9900;
+            color: #000;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 500px) {
+            .books-container {
+                grid-template-columns: 1fr;
+            }
+
+            .book-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .book-info {
+                padding: 0 20px 20px;
+            }
+
+            .book-rating {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Reading List</h1>
+        <p>9 books from the past year</p>
+    </header>
+
+    <main class="books-container">
+        <article class="book-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1356654499i/15796700.jpg" alt="Americanah cover" class="book-cover">
+            <div class="book-info">
+                <h2 class="book-title">Americanah</h2>
+                <p class="book-author">Chimamanda Ngozi Adichie</p>
+                <p class="book-description">A powerful story of love and identity following Ifemelu, a young Nigerian woman who immigrates to America, and her experiences with race, belonging, and the pull of home.</p>
+                <div class="book-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-text">4.3/5</span>
+                    <span class="amazon-badge">Amazon</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="book-card">
+            <img src="breakneck.jpg" alt="Breakneck cover" class="book-cover">
+            <div class="book-info">
+                <h2 class="book-title">Breakneck</h2>
+                <p class="book-author">Dan Wang</p>
+                <p class="book-description">An in-depth examination of China's ambitious industrial strategy and its race to dominate the technologies of the future, from semiconductors to electric vehicles.</p>
+                <div class="book-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-text">4.5/5</span>
+                    <span class="amazon-badge">Amazon</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="book-card">
+            <img src="https://covers.openlibrary.org/b/isbn/1541702697-L.jpg" alt="Dark Wire cover" class="book-cover">
+            <div class="book-info">
+                <h2 class="book-title">Dark Wire</h2>
+                <p class="book-author">Joseph Cox</p>
+                <p class="book-description">The thrilling true story of Anom, an encrypted phone company secretly run by the FBI, and how it ensnared thousands of criminals worldwide in one of history's largest sting operations.</p>
+                <div class="book-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="rating-text">4.6/5</span>
+                    <span class="amazon-badge">Amazon</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="book-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1566425108i/33.jpg" alt="The Lord of the Rings cover" class="book-cover">
+            <div class="book-info">
+                <h2 class="book-title">The Lord of the Rings</h2>
+                <p class="book-author">J.R.R. Tolkien</p>
+                <p class="book-description">The timeless epic fantasy following Frodo Baggins and the Fellowship on their perilous quest to destroy the One Ring and save Middle-earth from the Dark Lord Sauron.</p>
+                <div class="book-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="rating-text">4.8/5</span>
+                    <span class="amazon-badge">Amazon</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="book-card">
+            <img src="https://covers.openlibrary.org/b/isbn/1982185821-L.jpg" alt="I'm Glad My Mom Died cover" class="book-cover">
+            <div class="book-info">
+                <h2 class="book-title">I'm Glad My Mom Died</h2>
+                <p class="book-author">Jennette McCurdy</p>
+                <p class="book-description">A heartbreaking yet darkly comedic memoir from the former child star about her struggles with an abusive mother, eating disorders, and finding her own identity beyond Hollywood.</p>
+                <div class="book-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="rating-text">4.8/5</span>
+                    <span class="amazon-badge">Amazon</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="book-card">
+            <img src="https://covers.openlibrary.org/b/isbn/1250391237-L.jpg" alt="Careless People cover" class="book-cover">
+            <div class="book-info">
+                <h2 class="book-title">Careless People</h2>
+                <p class="book-author">Sarah Wynn-Williams</p>
+                <p class="book-description">A revealing insider account of Facebook's global expansion, exposing how the company's idealism gave way to a relentless pursuit of growth at any cost.</p>
+                <div class="book-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-text">4.5/5</span>
+                    <span class="amazon-badge">Amazon</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="book-card">
+            <img src="https://covers.openlibrary.org/b/isbn/059365613X-L.jpg" alt="Character Limit cover" class="book-cover">
+            <div class="book-info">
+                <h2 class="book-title">Character Limit</h2>
+                <p class="book-author">Ryan Mac</p>
+                <p class="book-description">The definitive account of Elon Musk's chaotic acquisition and transformation of Twitter, chronicling the mass layoffs, policy reversals, and cultural upheaval that followed.</p>
+                <div class="book-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-text">4.4/5</span>
+                    <span class="amazon-badge">Amazon</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="book-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1415428227i/20518872.jpg" alt="The Three-Body Problem cover" class="book-cover">
+            <div class="book-info">
+                <h2 class="book-title">The Three-Body Problem</h2>
+                <p class="book-author">Liu Cixin</p>
+                <p class="book-description">A groundbreaking Chinese science fiction novel about humanity's first contact with an alien civilization, blending Cultural Revolution history with mind-bending astrophysics.</p>
+                <div class="book-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-text">4.3/5</span>
+                    <span class="amazon-badge">Amazon</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="book-card">
+            <img src="https://covers.openlibrary.org/b/isbn/1770462899-L.jpg" alt="Ducks cover" class="book-cover">
+            <div class="book-info">
+                <h2 class="book-title">Ducks: Two Years in the Oil Sands</h2>
+                <p class="book-author">Kate Beaton</p>
+                <p class="book-description">A powerful graphic memoir about the author's experience working in the Alberta oil sands, exploring labor, sexism, environmental destruction, and the cost of Canada's resource economy.</p>
+                <div class="book-rating">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="rating-text">4.7/5</span>
+                    <span class="amazon-badge">Amazon</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>Reading is a journey, not a destination.</p>
+    </footer>
+</body>
+</html>
